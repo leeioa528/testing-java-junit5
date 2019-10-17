@@ -13,6 +13,8 @@ class OwnerTest {
         owner.setCity("Key West");
         owner.setTelephone("1231231234");
 
+        //this will run even if we have some failures
+        //use this complex objects
         assertAll("Properties Test",
                 () -> assertAll("Person Properties",
                         () -> assertEquals("Joe", owner.getFirstName(), "First Name Did not Match"),
