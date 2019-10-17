@@ -36,12 +36,13 @@ class IndexControllerTest {
         });
     }
 
-    @Disabled("Demo of timeout")
+   // @Disabled("Demo of timeout")
     @Test
     void testTimeOut() {
-
-        assertTimeout(Duration.ofMillis(100), () -> {
-            Thread.sleep(5000);
+        //we test for time out here i have 3000 mili, but the test wil finish in 2000
+        //helpfull if you want to time your test
+        assertTimeout(Duration.ofMillis(3000), () -> {
+            Thread.sleep(2000);
 
             System.out.println("I got here");
         });
