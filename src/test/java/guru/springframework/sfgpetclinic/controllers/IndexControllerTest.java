@@ -97,8 +97,8 @@ class IndexControllerTest {
     void testIfUserJT() {
     }
 
-    @EnabledIfEnvironmentVariable(named = "USER", matches = "fred")
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "hz296742")
     @Test
-    void testIfUserFred() {
+    void testIfUserLee() {
     }
 }
