@@ -23,6 +23,7 @@ class OwnerMapServiceTest {
         petTypeService = new PetTypeMapService();
         petService = new PetMapService();
         ownerMapService = new OwnerMapService(petTypeService, petService);
+        System.out.println("inside @BeforeEach OwnerMapServiceTest");
     }
 
     @DisplayName("Verify Zero Owners")
@@ -34,6 +35,7 @@ class OwnerMapServiceTest {
     }
 
     @DisplayName("Pet Type - ")
+    //newsted class with in  a class
     @Nested
     class TestCreatePetTypes {
 
@@ -43,6 +45,7 @@ class OwnerMapServiceTest {
             PetType petType2 = new PetType(2L, "Cat");
             petTypeService.save(petType);
             petTypeService.save(petType2);
+            System.out.println("inside @BeforeEach TestCreatePetTypes");
         }
 
         @DisplayName("Test Pet Count")
@@ -59,7 +62,9 @@ class OwnerMapServiceTest {
 
             @BeforeEach
             void setUp() {
+
                 ownerMapService.save(new Owner(1L, "Before", "Each"));
+                System.out.println("inside @BeforeEach SaveOwnersTests");
             }
 
             @DisplayName("Save Owner")
